@@ -43,8 +43,8 @@ function assert(expression, failureMessage) {
  Here are some examples for how to use the assert method:
 */
 
-assert(1 === 1, '1 equals 1 - this assert will pass.');
-assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
+assert (1 === 1, '1 equals 1 - this assert will pass.');
+assert (1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
 
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
@@ -82,35 +82,32 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // 'chirp' (10 points)
 
 var array1 = sentence1.split(' ');
-sentence1 = "";
+sentence1 = '';
 
 var array2 = sentence2.split(' ');
-sentence2 = "";
+sentence2 = '';
 
-for (var i=0; i < array1.length; i++){
+for (var i = 0; i < array1.length; i++) {
         array1[i] = 'chirp';
-        if (i<2){ sentence1 += array1[i] + " ";}
-        if (i===2) { sentence1 += array1[i] + ".";}
+        if (i < array1.length - 1) { sentence1 += array1[i] + ' ' ;}
+        if (i === array1.length - 1) { sentence1 += array1[i] + '.';}
 }
-
 console.log (sentence1);
-
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
-var n=0;
+var n = 0;
 
 while (n < array2.length)
 {
         array2[n] = 'chirp';
-        if (n<8) { sentence2 += array2[n] + " "};
-        if (n===8) { sentence2 += array2[n] + "."};
+        if (n < array2.length - 1) { sentence2 += array2[n] + ' ' ;}
+        if (n === array2.length - 1) { sentence2 += array2[n] + '.';}
         n++;
 }
 
 console.log (sentence2);
-
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
@@ -135,19 +132,19 @@ var nextAnimal;
 
 var favoriteAnimals = ['elephant', 'penguin', 'eagle', 'camel'];
 var nextAnimal;
-var b=4;
+var b = 4;
 var num;
 var rand;
 var a;
 
-while (b>3){
+while (b > 3) {
         num = Math.random();
         rand = num.toString();
         a = rand.charAt(2);
-        if (a==='0') {nextAnimal = favoriteAnimals[0]};
-        if (a==='1') {nextAnimal = favoriteAnimals[1]};
-        if (a==='2') {nextAnimal = favoriteAnimals[2]};
-        if (a==='3') {nextAnimal = favoriteAnimals[3]};
+        if (a === '0') {nextAnimal = favoriteAnimals[0];}
+        if (a === '1') {nextAnimal = favoriteAnimals[1];}
+        if (a === '2') {nextAnimal = favoriteAnimals[2];}
+        if (a === '3') {nextAnimal = favoriteAnimals[3];}
         b = Number(a);
 }
 
@@ -182,24 +179,22 @@ var tooHungryDay;
 
 tooHungryDay = 0;
 var i;
-var average=[];
-var sum=0;
-var day =0;
+var average = [];
+var sum = 0;
+var day = 0;
 
-for (i = 0; i < mealsPerDay.length; i++){
+for (i = 0; i < mealsPerDay.length; i++) {
         sum = sum + mealsPerDay[i];
         day = i + 1;
-        average[i] = sum/day;
+        average[i] = sum / day;
         console.log('Day ' + day + ': The average number of meals per day is ' + average[i] + '.'); 
 }
 
-
-for (i = 0; average[i] >= 4; i++){
-        tooHungryDay = i+2;
+for (i = 0; average[i] >= 4; i++) {
+        tooHungryDay = i + 2;
 }
 
-
-console.log ('The Too Hungry Day is day ' + tooHungryDay);
+console.log ('The Too Hungry Day is Day ' + tooHungryDay + '. Woe unto the caretaker, then.');
 
 assert(tooHungryDay, 'remember to assign the answer to tooHungryDay');
 assert(tooHungryDay < 10, 'the lion is too hungry before the end of the array');
